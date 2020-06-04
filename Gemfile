@@ -15,7 +15,6 @@ gem 'sequel_secure_password'
 
 gem 'config'               # Setting application
 
-
 # DB
 gem 'pg'
 gem 'sequel'               # ORM
@@ -23,6 +22,11 @@ gem 'tux'                  # Sinatra console
 
 gem 'dry-validation'       # Provided pattern Contact
 gem 'interactor', '~> 3.0' # Provided pattern Interactor
+
+group :development do
+  gem "seedbank", require: false         # Generate seed data
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+end
 
 group :test do
   gem 'rack-test'

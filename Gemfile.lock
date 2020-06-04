@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 76cafabe6751b201bdf61cd82f2f33f5483d1514
+  branch: master
+  specs:
+    faker (2.12.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +97,8 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
     ruby2_keywords (0.0.2)
+    seedbank (0.5.0)
+      rake (>= 10.0)
     sequel (5.32.0)
     sequel_secure_password (0.2.15)
       bcrypt (>= 3.1, < 4.0)
@@ -121,6 +131,7 @@ DEPENDENCIES
   config
   dry-validation
   dry-validation-matchers
+  faker!
   i18n
   interactor (~> 3.0)
   pg
@@ -129,6 +140,7 @@ DEPENDENCIES
   rake
   require_all
   rspec
+  seedbank
   sequel
   sequel_secure_password
   sinatra
