@@ -1,0 +1,9 @@
+db:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+  host: localhost
+  port:
+  database:
