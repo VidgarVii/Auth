@@ -9,7 +9,9 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-i18n', '~> 0.1.0'
+gem 'require_all'          # Auto load constants
 gem 'i18n'                 # Internationalization and localization
+gem 'sequel_secure_password'
 
 gem 'config'               # Setting application
 

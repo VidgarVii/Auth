@@ -3,12 +3,13 @@
 class User < Sequel::Model
   NAME_FORMAT = %r{\A\w+\z}
 
+  plugin :secure_password
+
   def validate
     super
 
     validates_presence :email
     validates_presence :name
-    validates_presence :password_digest
     validates_format NAME_FORMAT, :name
   end
 end
