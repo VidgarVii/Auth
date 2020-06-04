@@ -13,7 +13,6 @@ require 'sinatra/contrib'
 require 'sinatra/i18n'
 
 require_relative 'application'
-require_relative 'auth_service'
 require_relative 'initializers/sequel'
 
 require_all Application.root.join('app')

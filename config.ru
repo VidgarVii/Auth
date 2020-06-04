@@ -2,4 +2,6 @@
 
 require './config/environment'
 
-run AuthService
+map '/auth' do
+  run AuthRoutes
+end
