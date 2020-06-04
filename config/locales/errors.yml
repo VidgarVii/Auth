@@ -1,0 +1,10 @@
+en:
+  auth:
+    errors:
+      rules:
+        email:
+          invalid: &invalid 'has invalid format'
+        name:
+          invalid: *invalid
+        password:
+          confirmate: 'confirmation password does not match'
