@@ -1,20 +1,18 @@
+# frozen_string_literal: true
+
 class AuthRoutes < Application
+  helpers Validations
+
   namespace '/v1' do
     post '/users' do
-      content_type :json
+      user_params = validate_with!(NewUserContract)
 
-      result = NewUserContract.new.call(JSON.parse(request.body.read))
+      result = Users::CreateService.call(user_params: user_params[:user])
 
       if result.success?
-        User.create(result.to_h)
+        status 201
       else
-        error 400, result.errors.to_h
-      end
-
-      private
-
-      def user_params
-
+        error_response(result.user, 422)
       end
     end
   end

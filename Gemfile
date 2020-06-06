@@ -31,6 +31,5 @@ end
 group :test do
   gem 'rack-test'
   gem 'rspec'              # Test
-  gem 'dry-validation-matchers'
   gem 'test-prof'          # Provided simple methods for init objects
 end

@@ -12,6 +12,8 @@ require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/i18n'
 
+require_relative '../app/helpers/validations'
+require_relative '../app/helpers/api_errors'
 require_relative 'application'
 require_relative 'initializers/sequel'
 
