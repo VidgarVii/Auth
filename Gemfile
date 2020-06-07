@@ -30,6 +30,7 @@ end
 
 group :test do
   gem 'rack-test'
+  gem 'database_cleaner-sequel'
   gem 'rspec'              # Test
   gem 'test-prof'          # Provided simple methods for init objects
 end
