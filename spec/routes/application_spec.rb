@@ -11,6 +11,7 @@ describe AuthRoutes, type: :routes do
       end
 
       it { expect(last_response).to be_created }
+      it { expect(User.last.email).to eq 'mail@mail.tu' }
     end
 
     context 'invalid params' do
