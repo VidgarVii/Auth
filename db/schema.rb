@@ -1,18 +1,28 @@
 Sequel.migration do
   change do
     create_table(:schema_migrations) do
-      column :filename, "text", :null=>false
+      String :filename, :text=>true, :null=>false
       
       primary_key [:filename]
     end
     
+    create_table(:user_sessions, :ignore_index_errors=>true) do
+      primary_key :id, :type=>:Bignum
+      String :uuid, :null=>false
+      Bignum :user_id, :null=>false
+      DateTime :created_at, :size=>6, :null=>false
+      DateTime :updated_at, :size=>6, :null=>false
+      
+      index [:user_id]
+    end
+    
     create_table(:users) do
       primary_key :id, :type=>:Bignum
-      column :name, "character varying", :null=>false
-      column :email, "character varying", :null=>false
-      column :password_digest, "character varying", :null=>false
-      column :created_at, "timestamp(6) without time zone", :null=>false
-      column :updated_at, "timestamp(6) without time zone", :null=>false
+      String :name, :null=>false
+      String :email, :null=>false
+      String :password_digest, :null=>false
+      DateTime :created_at, :size=>6, :null=>false
+      DateTime :updated_at, :size=>6, :null=>false
     end
   end
 end
