@@ -14,7 +14,7 @@ namespace :db do
       Sequel::Migrator.run(db, migrations, target: version)
 
       File.write(
-        File.expand_path('../../db/schema.rb'),
+        File.expand_path('db/schema.rb'),
         DB.dump_schema_migration
       )
     end
