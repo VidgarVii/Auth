@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Auth
-  AUTH_TOKEN = /\ABearer (?<token>.+)\z/.freeze
+  AUTH_TOKEN = /\ABearer (?<token>.+)\z/
 
   def extracted_token
     JwtEncoder.decode(matched_token)
@@ -19,6 +19,6 @@ module Auth
   end
 
   def auth_header
-    request.headers['Authorization']
+    request.env['HTTP_AUTHORIZATION']
   end
 end
