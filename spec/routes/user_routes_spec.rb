@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe UserRoutes, type: :routes do
-  describe 'POST /v1/user' do
+  describe 'POST /v1/signup' do
     context 'valid params' do
       before do
         post '/', { "user": { "name": 'name',
@@ -17,13 +17,8 @@ describe UserRoutes, type: :routes do
     context 'invalid params' do
       before { post '/', { user: { name: '1' } }.to_json }
 
-      it 'when bad request' do
-        expect(last_response.status).to eq 422
-      end
-
-      it 'when return errors' do
-        expect(JSON.parse(last_response.body)).to be_has_key('errors')
-      end
+      it { expect(last_response.status).to eq 422 }
+      it { expect(response_body).to be_has_key('errors') }
     end
   end
 end

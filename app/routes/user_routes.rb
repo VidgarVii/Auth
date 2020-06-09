@@ -11,7 +11,8 @@ class UserRoutes < Application
     if result.success?
       status 201
     else
-      error_response(result.user, 422)
+      status 422
+      json(error_response(result.errors))
     end
   end
 end
