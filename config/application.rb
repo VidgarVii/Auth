@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Application < Sinatra::Base
-
   configure do
     register Sinatra::Contrib
 

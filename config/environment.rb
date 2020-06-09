@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ENV['APP_ENV'] ||= 'development'
 
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
