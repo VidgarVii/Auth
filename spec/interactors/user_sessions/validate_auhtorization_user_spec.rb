@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe UserSessions::ValidateAuhtorizationUser do
   subject { described_class.call(session_params: session_params) }
 
@@ -6,7 +8,7 @@ describe UserSessions::ValidateAuhtorizationUser do
   context 'when valid parameters' do
     let(:session_params) { { email: user.email, password: 'password' } }
 
-    it "be succeeds" do
+    it 'be succeeds' do
       is_expected.to be_a_success
     end
 
@@ -18,7 +20,7 @@ describe UserSessions::ValidateAuhtorizationUser do
   context 'when invalid parameters' do
     let(:session_params) { { email: user.email, password: 'pas' } }
 
-    it "fails" do
+    it 'fails' do
       is_expected.to be_a_failure
     end
   end
