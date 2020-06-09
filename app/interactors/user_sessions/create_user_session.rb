@@ -7,10 +7,10 @@ module UserSessions
     def call
       session = UserSession.new
 
-      if session.valid?(session)
+      if session.valid?
         context.user_session = context.user.add_session(session)
       else
-        context.fail(errors: session.errors)
+        context.fail!(errors: session.errors)
       end
     end
   end
