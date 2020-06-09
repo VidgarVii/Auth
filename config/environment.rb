@@ -13,6 +13,8 @@ require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/i18n'
 
+require 'active_support/core_ext/object/blank'
+
 require_relative '../app/helpers/validations'
 require_relative '../app/helpers/api_errors'
 require_relative 'application'

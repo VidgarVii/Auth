@@ -144,6 +144,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (~> 6.0.0)
   config
   database_cleaner-sequel
   dry-validation

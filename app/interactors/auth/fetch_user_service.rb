@@ -6,7 +6,7 @@ module Auth
 
     def call
       if context.uuid.blank? || session.blank?
-        context.fail(errors: I18n.t(:forbidden, scope: 'services.auth.fetch_user_service'))
+        context.fail!(errors: I18n.t(:forbidden, scope: 'services.auth.fetch_user_service'))
       end
 
       context.user = session.user
@@ -15,7 +15,7 @@ module Auth
     private
 
     def session
-      @session ||= UserSession.find_by(uuid: context.uuid)
+      @session ||= UserSession.find(uuid: context.uuid)
     end
   end
 end
