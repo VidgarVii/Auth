@@ -20,6 +20,8 @@ gem 'pg'
 gem 'sequel'               # ORM
 gem 'tux'                  # Sinatra console
 
+gem 'jwt', '~> 2.2.1'
+
 gem 'dry-validation'       # Provided pattern Contact
 gem 'interactor', '~> 3.0' # Provided pattern Interactor
 
