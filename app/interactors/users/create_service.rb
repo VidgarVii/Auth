@@ -14,7 +14,9 @@ module Users
         password_confirmation: user_params[:password_confirmation]
       )
 
-      context.fail!(errors: user.errors) unless user.save
+      context.fail!(errors: user.errors) unless user.valid?
+
+      user.save
     end
   end
 end

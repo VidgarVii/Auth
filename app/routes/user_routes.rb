@@ -3,7 +3,7 @@
 class UserRoutes < Application
   helpers Validations
 
-  post '/users' do
+  post '/' do
     user_params = validate_with!(NewUserContract)
 
     result = Users::CreateService.call(user_params: user_params[:user])
