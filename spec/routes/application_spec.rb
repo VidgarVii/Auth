@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-describe AuthRoutes, type: :routes do
-  describe 'POST api/v1/user' do
+describe UserRoutes, type: :routes do
+  describe 'POST /v1/user' do
     context 'valid params' do
       before do
-        post '/v1/users', { "user": { "name": 'name',
+        post '/', { "user": { "name": 'name',
                                       "email": 'mail@mail.tu',
                                       "password": 'password',
                                       "password_confirmation": 'password' } }.to_json
@@ -15,7 +15,7 @@ describe AuthRoutes, type: :routes do
     end
 
     context 'invalid params' do
-      before { post '/v1/users', { user: { name: '1' } }.to_json }
+      before { post '/', { user: { name: '1' } }.to_json }
 
       it 'when bad request' do
         expect(last_response.status).to eq 422

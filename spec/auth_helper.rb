@@ -11,20 +11,9 @@ require 'rspec'
 require 'test_prof/recipes/rspec/let_it_be'
 require 'database_cleaner/sequel'
 
-module RSpecMixin
-  include Rack::Test::Methods
+Dir[Application.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
-  def app
-    described_class
-  end
-
-  def response_body
-    JSON.parse(last_response.body)
-  end
-end
-
-DatabaseCleaner[:sequel].strategy = :transaction
-
-RSpec.configure do |c|
-  c.include RSpecMixin
+RSpec.configure do |config|
+  config.include Rack::Test::Methods
+  config.include RouteHelper, type: :routes
 end
