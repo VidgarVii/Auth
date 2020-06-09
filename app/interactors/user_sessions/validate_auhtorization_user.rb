@@ -5,16 +5,13 @@ module UserSessions
     include Interactor
 
     def call
-      context.fail(:unauthorized) unless find_user&.authenticated(context.user_params.password)
+      context.fail!(errors: :unauthorized) unless find_user&.authenticate(context.session_params[:password])
     end
 
     private
 
     def find_user
-      User.where(
-        email: context.email,
-        password: context.password
-       )
+      context.user = User.find(email: context.session_params[:email])
     end
   end
 end
