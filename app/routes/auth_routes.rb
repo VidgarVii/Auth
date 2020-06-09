@@ -6,7 +6,7 @@ class AuthRoutes < Application
   post '/' do
     content_type :json
 
-    result = Auth::FetchUserService.call(uuid: extracted_token[:uuid])
+    result = Auth::FetchUserService.call(uuid: extracted_token['uuid'])
 
     if result.success?
       status 200
