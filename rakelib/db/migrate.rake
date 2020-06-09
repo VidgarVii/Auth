@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'config'
 
 namespace :db do
   desc 'Run database migration'
-  task :migrate, %i[version] => :settings do |t, args|
+  task :migrate, %i[version] => :settings do |_t, args|
     require 'sequel/core'
     DB.extension :schema_dumper
     Sequel.extension :migration
