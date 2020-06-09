@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class NewUserContract < ApplicationContract
-  EMAIL_PATTERN = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  EMAIL_PATTERN = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 
   params do
     required(:user).hash do
