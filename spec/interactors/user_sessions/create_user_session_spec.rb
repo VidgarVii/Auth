@@ -8,7 +8,7 @@ describe UserSessions::CreateUserSession do
       is_expected.to be_a_success
     end
 
-    it 'exists context with user' do
+    it 'exists context with user_session' do
       expect(subject.user_session).to be_a(UserSession)
     end
   end
