@@ -2,8 +2,14 @@ db:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username:
-  password:
+  username: postgres
+  password: postgres
   host: localhost
-  port:
-  database:
+  port: 5433
+  database: ads_auth_development
+app:
+  secret: ''
+
+rabbitmq:
+  consumer_pool:
+    10
