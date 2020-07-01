@@ -1,4 +1,4 @@
-module RabbitMQ
+module RabbitMq
   extend self
 
   @mutex = Mutex.new
@@ -7,6 +7,10 @@ module RabbitMQ
     @mutex.synchronize do
       @connection ||= Bunny.new.start
     end
+  end
+
+  def channel
+    Thread.current[:channel] ||= connection.create_channel
   end
 
   def consumer_channel
