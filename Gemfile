@@ -12,7 +12,7 @@ gem 'sequel_secure_password'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-i18n', '~> 0.1.0'
-gem 'activesupport', '~> 6.0.0', require: false
+gem 'activesupport', '~> 6.0.6', require: false
 
 gem 'config'               # Setting application
 
